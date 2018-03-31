@@ -27,25 +27,41 @@
 							<h1>Today</h1>
 						</header>
                         <div class="leftjustified">
-                            <h2>What was your overall mood today?</h2>
-                            <h2>What is one thing you're grateful for today?</h2>
-                            <h2>What is one thing you accomplished today?</h2>
-                            <h3>How big was that accomplishmentf for you?</h2>
-                            <h2>What did you do to stay healthy today?</h2>
+                        	<form name="submit-to-google-sheet">
+                        	<h2>What was your overall mood today?</h2>
+					        <textarea name="mood" type="text" placeholder="" required></textarea>
+					        <h2>What is one thing you're grateful for today?</h2>
+					        <textarea name="grateful" type="text" placeholder="" required></textarea>
+					        <h2>What is one thing you accomplished today?</h2>
+					        <textarea name="accomp" type="text" placeholder="" required></textarea>
+					        <h3>How big was that accomplishment for you?</h3>
+					        <textarea name="accompScale" type="text" placeholder="" required></textarea>
+					        <h2>What did you do to stay healthy today?</h2>
                                 <h3>This can be physical health, mental health, or anything else you did to improve your own well-being!</h3>
-                            <h2>What could you improve on?</h2>
+					        <textarea name="healthy" type="text" placeholder="" required></textarea>
+							<h2>What could you improve on?</h2>
+							<textarea name="improve" type="text" placeholder"" required></textarea>
+					        <button type="submit">Send</button>
+					        </form>
                         </div>
+                        <script>
+				          const scriptURL = 'https://script.google.com/macros/s/AKfycbwEhKkiOXfVDrOgeWAQcVtTR5OSon7lJUTMN-ne4oYMt61y6io/exec'
+				          const form = document.forms['submit-to-google-sheet']
+
+				          form.addEventListener('submit', e => {
+				            e.preventDefault()
+				            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				              .then(response => console.log('Success!', response))
+				              .catch(error => console.error('Error!', error.message))
+				          })
+				        </script>
 						<!--
 						<hr />
 						<h2>Extra Stuff!</h2>
 						<form method="post" action="#">
 							<div class="field">
-								<input type="text" name="name" id="name" placeholder="Name" />
-							</div>
-							<div class="field">
-								<input type="email" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="field">
+								<input type="text" name="name" id="name" placeholder=			<div class="field">
+								<input type="email" name="email" id="email" placeholder=				<div class="field">
 								<div class="select-wrapper">
 									<select name="department" id="department">
 										<option value="">Department</option>
@@ -56,7 +72,7 @@
 								</div>
 							</div>
 							<div class="field">
-								<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+								<textarea name="message" id="message" placeholder=a>
 							</div>
 							<div class="field">
 								<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
