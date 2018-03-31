@@ -704,7 +704,8 @@
 		position: relative;
 		max-width: 100%;
 		min-width: 27em;
-		padding: 4.5em 3em 3em 3em ;
+/*		padding: 4.5em 3em 3em 3em ;*/
+        padding: 4.5em 3em 3em 3em ;
 		background: #ffffff;
 		border-radius: 4px;
 		cursor: default;
@@ -854,3 +855,10 @@
 		body.is-ie #wrapper {
 			height: 100%;
 		}
+
+.biggerButton{
+    font-size: 2em;
+    font-family: inherit;
+    margin-left: 15px;
+    margin-right: 15px
+}
