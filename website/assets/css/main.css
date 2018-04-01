@@ -871,11 +871,6 @@ header{
     text-align: left;
 }
 
-/*
-div{
-    border: 1px solid red;
-}
-*/
 .column{
     display: inline-block;
     width: 49%;
@@ -884,9 +879,14 @@ div{
 }
 
 .list{
-    
+    padding: 10px;
+    text-align: left;
 }
 
 .bordered{
     border: 1px solid black;
+}
+
+.moodItem{
+    margin: 0px;
 }
